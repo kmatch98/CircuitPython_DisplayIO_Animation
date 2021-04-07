@@ -21,7 +21,7 @@ Introduction
     :target: https://github.com/psf/black
     :alt: Code Style: Black
 
-Get your graphics on the move with this Animation library that uses displayio to make buttery-smooth animations for dyour display or LED matrix
+Get your graphics "on the move" with this Animation library that uses CircuitPython's displayio to make buttery-smooth animations for your LCD/TFT display or LED matrix.
 
 
 Dependencies
@@ -29,6 +29,7 @@ Dependencies
 This driver depends on:
 
 * `Adafruit CircuitPython <https://github.com/adafruit/circuitpython>`_
+* `Adafruit_DisplayIO_Layout <https://github.com/adafruit/Adafruit_CircuitPython_DisplayIO_Layout/>`_
 
 Please ensure all dependencies are available on the CircuitPython filesystem.
 This is easily achieved by downloading
@@ -39,8 +40,7 @@ or individual libraries can be installed using
 Usage Example
 =============
 
-.. todo:: Add a quick, simple example. It and other examples should live in the
-examples folder and be included in docs/examples.rst.
+See scripts in the examples directory of this repository.
 
 Contributing
 ============
