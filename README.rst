@@ -23,7 +23,8 @@ Introduction
 
 Get your graphics "on the move" with this Animation library that uses CircuitPython's displayio to make buttery-smooth animations for your LCD/TFT display or LED matrix.
 
-
+.. image:: https://user-images.githubusercontent.com/33587466/114058917-7c4f1180-9859-11eb-9ae9-7a474636fa90.gif
+     :alt: Graphic showing the animated simpletest example in action.
 
 Usage
 =====
