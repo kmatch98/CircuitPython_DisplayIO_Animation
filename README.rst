@@ -30,22 +30,24 @@ Usage
 
 This library consists of a `Animation` class.
 
-1. Create the graphical elements and put them into separate groups, depending upon which elements will be move together or separately.
+#. Create the graphical elements and put them into separate groups, depending upon which elements will be move together or separately.
 
-2. Instance an `Animation()` object and creat the animation entries using `add_entry()` with all the desired parameters, including the starting and ending frames, the function for animating your object and all the relevant parameters for that function.
+#. Instance an `Animation()` object and creat the animation entries using `add_entry()` with all the desired parameters, including the starting and ending frames, the function for animating your object and all the relevant parameters for that function.
 
-	- Several initial animation functions are provided:
-		- `translate` - Move the group between two (x1,y1) and (x2,y2) locations with options for "easing" functions to make cool animations
-		- `translate_relative` - Move from the initial position by (delta_x, delta_y), also with options for easing functions
-		- `wiggle` - make some nervous jittery motion while generally staying in one spot
+   - Several initial animation functions are provided:
+      - `translate` - Move the group between two (x1,y1) and (x2,y2) locations with options for "easing" functions to make cool animations
 
-	- Add you own functions, maybe morphing colors, rotation or changing the shape altogether as it moves.
+	  - `translate_relative` - Move from the initial position by (delta_x, delta_y), also with options for easing functions
 
-	- You can combine animations over the same frames, try it out and see what you can discover!
+	  - `wiggle` - make some nervous jittery motion while generally staying in one spot
 
-3. Make a `while` loop that calls `execute_frame()` for each frame.
+   - Add your own functions, maybe morphing colors, rotation or changing the shape altogether as it moves.
 
-4. Enjoy watching your animation.
+   - You can combine animations over the same frames, try it out and see what you can discover!
+
+#. Make a `while` loop that calls `execute_frame()` for each frame.
+
+#. Enjoy watching your animation.
 
 **Bonus:** Try different settings for the "easing"  to get all kinds of smooth and creative animations.
 
