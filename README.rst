@@ -3,7 +3,7 @@ Introduction
 
 
 .. image:: https://readthedocs.org/projects/circuitpython-displayio_animation/badge/?version=latest
-     :target: https://circuitpython-displayio-animation.readthedocs.io/en/latest/api.html/
+     :target: https://circuitpython-displayio-animation.readthedocs.io/
      :alt: Documentation Status
 
 
