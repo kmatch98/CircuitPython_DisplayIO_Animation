@@ -51,11 +51,11 @@ There are just a few steps required to get your Animation going:
 
 4. **Enjoy** watching your animation.
 
-**Bonus:** Try different settings for the "easing"  to get all kinds of smooth and creative animations.
+5. **Bonus:** Try different settings for the "easing"  to get all kinds of smooth and creative animations.
 
-`Here is an example showing how to use these Animations <https://github.com/kmatch98/CircuitPython_DisplayIO_Animation/tree/main/examples>`_
+**Example:** `Here is an example showing how to use these Animations <https://github.com/kmatch98/CircuitPython_DisplayIO_Animation/tree/main/examples>`_
 
-`Go check out the documentation with more details how to use these animation tools with displayio <https://circuitpython-displayio-animation.readthedocs.io/en/latest/api.html>`_.
+**Documentation**`Go check out the documentation with more details how to use these animation tools with displayio <https://circuitpython-displayio-animation.readthedocs.io/en/latest/api.html>`_.
 
 
 
