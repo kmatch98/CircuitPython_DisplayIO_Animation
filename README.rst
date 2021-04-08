@@ -37,9 +37,7 @@ This library consists of a `Animation` class.
    * Several initial animation functions are provided:
 
      * `translate` - Move the group between two (x1,y1) and (x2,y2) locations with options for "easing" functions to make cool animations
-
 	 * `translate_relative` - Move from the initial position by (delta_x, delta_y), also with options for easing functions
-
 	 * `wiggle` - make some nervous jittery motion while generally staying in one spot
 
    * Add your own functions, maybe morphing colors, rotation or changing the shape altogether as it moves.
