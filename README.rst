@@ -30,25 +30,25 @@ Usage
 
 This library consists of a `Animation` class.
 
-#. Create the graphical elements and put them into separate groups, depending upon which elements will be move together or separately.
+1. Create the graphical elements and put them into separate groups, depending upon which elements will be move together or separately.
 
-#. Instance an `Animation()` object and creat the animation entries using `add_entry()` with all the desired parameters, including the starting and ending frames, the function for animating your object and all the relevant parameters for that function.
+2. Instance an `Animation()` object and creat the animation entries using `add_entry()` with all the desired parameters, including the starting and ending frames, the function for animating your object and all the relevant parameters for that function.
 
    * Several initial animation functions are provided:
 
-     * `translate` - Move the group between two (x1,y1) and (x2,y2) locations with options for "easing" functions to make cool animations
+     - `translate` - Move the group between two (x1,y1) and (x2,y2) locations with options for "easing" functions to make cool animations
 
-	 * `translate_relative` - Move from the initial position by (delta_x, delta_y), also with options for easing functions
+	 - `translate_relative` - Move from the initial position by (delta_x, delta_y), also with options for easing functions
 
-	 * `wiggle` - make some nervous jittery motion while generally staying in one spot
+	 - `wiggle` - make some nervous jittery motion while generally staying in one spot
 
    * Add your own functions, maybe morphing colors, rotation or changing the shape altogether as it moves.
 
    * You can combine animations over the same frames, try it out and see what you can discover!
 
-#. Make a `while` loop that calls `execute_frame()` for each frame.
+3. Make a `while` loop that calls `execute_frame()` for each frame.
 
-#. Enjoy watching your animation.
+4. Enjoy watching your animation.
 
 **Bonus:** Try different settings for the "easing"  to get all kinds of smooth and creative animations.
 
