@@ -34,14 +34,14 @@ This library consists of a `Animation` class.
 
 2. Instance an `Animation()` object and creat the animation entries using `add_entry()` with all the desired parameters, including the starting and ending frames, the function for animating your object and all the relevant parameters for that function.
 
-	* Several initial animation functions are provided:
+	- Several initial animation functions are provided:
 		- `translate` - Move the group between two (x1,y1) and (x2,y2) locations with options for "easing" functions to make cool animations
 		- `translate_relative` - Move from the initial position by (delta_x, delta_y), also with options for easing functions
 		- `wiggle` - make some nervous jittery motion while generally staying in one spot
 
-	* Add you own functions, maybe morphing colors, rotation or changing the shape altogether as it moves.
+	- Add you own functions, maybe morphing colors, rotation or changing the shape altogether as it moves.
 
-	* You can combine animations over the same frames, try it out and see what you can discover!
+	- You can combine animations over the same frames, try it out and see what you can discover!
 
 3. Make a `while` loop that calls `execute_frame()` for each frame.
 
