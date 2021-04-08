@@ -3,8 +3,8 @@ Introduction
 
 
 .. image:: https://readthedocs.org/projects/circuitpython-displayio_animation/badge/?version=latest
-    :target: https://github.com/kmatch98/CircuitPython_DisplayIO_Animation/index.html
-    :alt: Documentation Status
+     :target: https://circuitpython-displayio-animation.readthedocs.io/en/latest/api.html/
+     :alt: Documentation Status
 
 
 .. image:: https://img.shields.io/discord/327254708534116352.svg
@@ -28,7 +28,10 @@ Get your graphics "on the move" with this Animation library that uses CircuitPyt
 Usage
 =====
 
-`Go check out the documentation with more details how to use these animation tools with displayio <https://github.com/kmatch98/CircuitPython_DisplayIO_Animation/index.html>`_
+This library consists of a `Animation` class.  `Here is an example showing how to use these Animations <https://github.com/kmatch98/CircuitPython_DisplayIO_Animation/tree/main/examples>`_
+
+
+`Go check out the documentation with more details how to use these animation tools with displayio <https://circuitpython-displayio-animation.readthedocs.io/en/latest/api.html>`_
 
 
 

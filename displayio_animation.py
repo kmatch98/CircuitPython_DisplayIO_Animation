@@ -166,6 +166,12 @@ class Entry:
              easing_function_x=quadratic_easeinout,
              easing_function_y=quadratic_easeinout)
 
+    :param displayio.Group group: the group that is animated in this set of frames
+    :param float frame_start: the starting frame for this animation
+    :param float frame_end: the ending frame for this animation
+    :param function: the function that mutates the group to cause the animation
+    :param kwargs: a set of additional arguments that will be passed to the
+     ``function`` during the animation
     """
 
     def __init__(
