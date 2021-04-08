@@ -211,8 +211,8 @@ animation.add_entry(
     frame_start=40,
     frame_end=90,
     function=translate_relative,
-    delta_x=+80,
-    delta_y=100,
+    delta_x=+120,
+    delta_y=-50,
     easing_function_x=exponential_easeinout,
     easing_function_y=quadratic_easeout,
 )
