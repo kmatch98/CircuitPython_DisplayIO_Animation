@@ -30,9 +30,9 @@ Usage
 
 This library consists of a `Animation` class.
 
-1. Create the graphical elements and put them into separate groups, depending upon which elements will be move together or separately.
+1. **Create the graphical elements** and put them into separate groups, depending upon which elements will be move together or separately.
 
-2. Instance an `Animation()` object and creat the animation entries using `add_entry()` with all the desired parameters, including the starting and ending frames, the function for animating your object and all the relevant parameters for that function.
+2. **Instance an `Animation()` object** and creat the animation entries using `add_entry()` with all the desired parameters, including the starting and ending frames, the function for animating your object and all the relevant parameters for that function.
 
    * Several initial animation functions are provided:
 
@@ -47,9 +47,9 @@ This library consists of a `Animation` class.
 
    * You can combine animations over the same frames, try it out and see what you can discover!
 
-3. Make a `while` loop that calls `execute_frame()` for each frame.
+3. **Make a `while` loop** that calls `execute_frame()` for each frame.
 
-4. Enjoy watching your animation.
+4. **Enjoy** watching your animation.
 
 **Bonus:** Try different settings for the "easing"  to get all kinds of smooth and creative animations.
 
