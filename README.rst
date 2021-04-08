@@ -28,7 +28,7 @@ Get your graphics "on the move" with this Animation library that uses CircuitPyt
 Usage
 =====
 
-This library consists of a `Animation` class.
+There are just a few steps required to get your Animation going:
 
 1. **Create the graphical elements** and put them into separate groups, depending upon which elements will be move together or separately.
 
