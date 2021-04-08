@@ -55,7 +55,7 @@ There are just a few steps required to get your Animation going:
 
 **Example:** `Here is an example showing how to use these Animations <https://github.com/kmatch98/CircuitPython_DisplayIO_Animation/tree/main/examples>`_
 
-**Documentation**`Go check out the documentation with more details how to use these animation tools with displayio <https://circuitpython-displayio-animation.readthedocs.io/en/latest/api.html>`_.
+**Documentation** `Go check out the documentation with more details how to use these animation tools with displayio <https://circuitpython-displayio-animation.readthedocs.io/en/latest/api.html>`_.
 
 
 
