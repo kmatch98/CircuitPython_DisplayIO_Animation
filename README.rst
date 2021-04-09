@@ -29,11 +29,11 @@ Get your graphics "on the move" with this Animation library that uses CircuitPyt
 Usage
 =====
 
-There are just a few steps required to get your Animation going:
+There are three steps required to get your Animation going:
 
-1. **Create the graphical elements** and put them into separate groups, depending upon which elements will be move together or separately.
+1. **Create the graphical elements** and put them into groups, organize the groups depending upon which elements will be move together or separately.
 
-2. **Instance an `Animation()` object** and creat the animation entries using `add_entry()` with all the desired parameters, including the starting and ending frames, the function for animating your object and all the relevant parameters for that function.
+2. **Instance an `Animation()` object** and create the animation entries using `add_entry()` with all the desired parameters, including the starting and ending frames, the function for animating your object and all the relevant parameters for that function.
 
    * Several initial animation functions are provided:
 
