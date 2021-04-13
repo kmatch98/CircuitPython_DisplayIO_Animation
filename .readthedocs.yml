@@ -8,4 +8,3 @@ requirements_file: requirements.txt
 
 sphinx:
     configuration: docs/conf.python
-
