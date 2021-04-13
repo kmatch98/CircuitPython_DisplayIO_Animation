@@ -13,20 +13,21 @@ import board
 import vectorio
 import displayio
 
-# pylint: disable=wildcard-import
-
 from adafruit_displayio_layout.widgets.displayio_animation import (
     Animation,
     back_easeinout,
-    elastic_easeout,
-    exponential_easeinout,
-    quadratic_easeout,
-    quartic_easeinout,
     translate,
     translate_relative,
     wiggle,
 )
-from adafruit_displayio_layout.widgets.easing import *
+
+from adafruit_displayio_layout.widgets.easing import (
+    elastic_easeout,
+    exponential_easeinout,
+    quadratic_easeout,
+    quartic_easeinout,
+)
+
 
 # initialize the display
 display = board.DISPLAY
