@@ -16,15 +16,15 @@ import displayio
 # pylint: disable=wildcard-import
 
 from adafruit_displayio_layout.widgets.displayio_animation import (
-    wiggle,
-    quadratic_easeout,
+    Animation,
     back_easeinout,
     elastic_easeout,
-    quartic_easeinout,
     exponential_easeinout,
+    quadratic_easeout,
+    quartic_easeinout,
     translate,
-    Animation,
     translate_relative,
+    wiggle,
 )
 from adafruit_displayio_layout.widgets.easing import *
 
