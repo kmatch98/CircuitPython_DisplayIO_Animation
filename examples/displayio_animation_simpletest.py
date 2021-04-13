@@ -15,7 +15,17 @@ import displayio
 
 # pylint: disable=wildcard-import
 
-from adafruit_displayio_layout.widgets.displayio_animation import *
+from adafruit_displayio_layout.widgets.displayio_animation import (
+    Animation,
+    back_easeinout,
+    elastic_easeout,
+    exponential_easeinout,
+    quadratic_easeout,
+    quartic_easeinout,
+    translate,
+    translate_relative,
+    wiggle,
+)
 from adafruit_displayio_layout.widgets.easing import *
 
 # initialize the display
@@ -23,7 +33,9 @@ display = board.DISPLAY
 
 # Store the initial memory usage
 gc.collect()
+# pylint: disable=no-member
 start_mem = gc.mem_free()
+# pylint: enable=no-member
 print("1 gc.mem_free: {}".format(start_mem))
 
 ###################################
@@ -89,7 +101,9 @@ main_group.append(group4)
 
 # Store the memory usage after creating the graphical elements
 gc.collect()
+# pylint: disable=no-member
 graphics_mem = gc.mem_free()
+# pylint: enable=no-member
 print("2 gc.mem_free:   {}".format(graphics_mem))
 
 display.show(main_group)
@@ -220,7 +234,9 @@ animation.add_entry(
 
 # Store the memory usage after creating the Animation elements
 gc.collect()
+# pylint: disable=no-member
 animation_mem = gc.mem_free()
+# pylint: enable=no-member
 print("3 gc.mem_free:   {}".format(graphics_mem))
 print("Memory used for graphic elements: {} bytes".format(start_mem - graphics_mem))
 print(

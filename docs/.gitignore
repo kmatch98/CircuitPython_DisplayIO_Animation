@@ -2,9 +2,5 @@
 #
 # SPDX-License-Identifier: Unlicense
 
-python:
-    version: 3
-requirements_file: requirements.txt
-
-sphinx:
-    configuration: docs/conf.python
+_build
+objects.inv
