@@ -114,19 +114,19 @@ class Animation(list):
                 entry.startx = entry.group.x
                 entry.starty = entry.group.y
 
-            if entry.frame_start <= frame < entry.frame_end:
+            if entry.frame_start <= frame <= entry.frame_end:
                 # This frame is within the entry frame range, so animate it
 
                 # calculate a value between 0.0 and 1.0 to show the current frame's
                 # position within this entry's frame range
 
                 if (
-                    entry.frame_end - 1 - entry.frame_start
+                    entry.frame_end - entry.frame_start
                 ) <= 0:  # prevent divide by zero
                     position = 1.0
                 else:
                     position = (frame - entry.frame_start) / (
-                        entry.frame_end - 1 - entry.frame_start
+                        entry.frame_end - entry.frame_start
                     )
                 entry.function(
                     position=position,
@@ -253,7 +253,6 @@ def translate(
 
     group.x = round((x2 - x1) * easing_function_x(position)) + x1
     group.y = round((y2 - y1) * easing_function_y(position)) + y1
-
 
 def translate_relative(
     *,
