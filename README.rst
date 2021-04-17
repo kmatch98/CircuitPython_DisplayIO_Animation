@@ -49,6 +49,9 @@ There are three steps required to get your Animation going:
      - `translate_relative` - Move from the initial position by (delta_x, delta_y), also
        with options for easing functions
      - `wiggle` - make some nervous jittery motion while generally staying in one spot
+     - `color_morph_vector_shape` - morph between a starting and ending color for a vector shape
+     - `color_morph_label` - morph between a starting and ending color for a text label
+     - `color_morph_palette` - morph between a starting palette of colors all to a single ending color (usually used for a bitmap)
 
    * Add your own functions, maybe morphing colors, rotation or changing the shape altogether
      as it moves.
