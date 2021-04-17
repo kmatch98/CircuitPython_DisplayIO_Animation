@@ -23,6 +23,7 @@ Implementation Notes
 """
 
 # Animation class for use with displayio Groups
+from displayio import Palette
 
 from adafruit_displayio_layout.widgets.easing import linear_interpolation
 
@@ -110,7 +111,7 @@ class Animation(list):
         """
         for entry in self:
 
-            if frame == entry.frame_start:  # initialize startx, starty
+            if (frame == entry.frame_start) and (entry.group is not None):  # initialize startx, starty
                 entry.startx = entry.group.x
                 entry.starty = entry.group.y
 
@@ -120,7 +121,9 @@ class Animation(list):
                 # calculate a value between 0.0 and 1.0 to show the current frame's
                 # position within this entry's frame range
 
-                if (entry.frame_end - entry.frame_start) <= 0:  # prevent divide by zero
+                if (
+                    entry.frame_end - entry.frame_start
+                ) <= 0:  # prevent divide by zero
                     position = 1.0
                 else:
                     position = (frame - entry.frame_start) / (
@@ -252,7 +255,6 @@ def translate(
     group.x = round((x2 - x1) * easing_function_x(position)) + x1
     group.y = round((y2 - y1) * easing_function_y(position)) + y1
 
-
 def translate_relative(
     *,
     delta_x,
@@ -317,7 +319,7 @@ def wiggle(
     frame_start,
     frame,
     **kwargs
-):
+    ):
     """Performs a nervous wiggling animation around the starting point. To achieve a random-looking
     wiggle, set ``xsteps`` and ``ysteps`` to two different prime numbers.
 
@@ -367,3 +369,118 @@ def wiggle(
         group.y = y0 + round(
             delta_y / ysteps * ypositions[int((frame - frame_start) % len(ypositions))]
         )
+
+def color_morph_vector_shape(
+                *,
+                color_start,
+                color_end,
+                vector_shape,
+                position,
+                **kwargs,
+                ):
+    """Performs color morphing for a vector shape, with color between the ``color_start`` and ``color_end``
+    values based on the position parameter.
+
+    :param int color_start: the starting color
+    :param int color_end: the ending_color
+    :param vectorio.VectorShape vector_shape: the VectorShape whose palette color index 1
+     should be morphed.
+    :param float position: float position: a linear interpolation of the current frame's
+     position between ``frame_start`` and ``frame_end``. If using
+     `Animation.execute_frame()` the ``position`` parameter will be included automatically.
+    """
+    morphed_color = _color_fade(color_start, color_end, position)
+
+    palette=Palette(2)
+    palette[1]=morphed_color
+    palette.make_transparent(0)
+
+    vector_shape.pixel_shader=palette
+
+def color_morph_label(
+                *,
+                color_start,
+                color_end,
+                label,
+                position,
+                **kwargs,
+                ):
+    """Performs color morphing for a text label between the ``color_start`` and ``color_end``
+    values based on the position parameter.
+
+    :param int color_start: the starting color
+    :param int color_end: the ending_color
+    :param label: the label whose color is to be morphed
+    :param float position: float position: a linear interpolation of the current frame's
+     position between ``frame_start`` and ``frame_end``. If using
+     `Animation.execute_frame()` the ``position`` parameter will be included automatically.
+    """
+    morphed_color = _color_fade(color_start, color_end, position)
+    label.color = morphed_color
+
+def color_morph_palette(
+                *,
+                palette_start,
+                color_end,
+                palette_target,
+                position,
+                **kwargs,
+                ):
+    """Performs color morphing for a color palette between the ``palette_start`` and a single
+    ``color_end`` value based on the position parameter.  At the final position=1.0, the
+    ``palette_target`` will be filled with the ``color_end`` value.
+
+    :param displayio.palette palette_start: the starting palette for the image
+    :param int color_end: the single ending_color for all the colors in the palette
+    :param displayio.palette palette_target: the destination palette to be "morphed" to the
+     ending_color
+    :param float position: float position: a linear interpolation of the current frame's
+     position between ``frame_start`` and ``frame_end``. If using
+     `Animation.execute_frame()` the ``position`` parameter will be included automatically.
+    """
+    for i, color in enumerate(palette_start):
+        morphed_color = _color_fade(color, color_end, position)
+        palette_target[i] = morphed_color
+
+
+def _color_to_tuple(value):
+    """Converts a color from a 24-bit integer to a tuple.
+    :param value: RGB LED desired value - can be a RGB tuple or a 24-bit integer.
+    """
+    if isinstance(value, tuple):
+        return value
+    if isinstance(value, int):
+        if value >> 24:
+            raise ValueError("Only bits 0->23 valid for integer input")
+        r = value >> 16
+        g = (value >> 8) & 0xFF
+        b = value & 0xFF
+        return [r, g, b]
+
+    raise ValueError("Color must be a tuple or 24-bit integer value.")
+
+def _tuple_to_color(rgb_tuple):
+    rgb_int = rgb_tuple[0] << 16 | rgb_tuple[1] << 8 | rgb_tuple[2]
+    return rgb_int
+
+def _color_fade(start_color, end_color, fraction):
+    """Linear extrapolation of a color between two RGB colors (tuple or 24-bit integer).
+    :param start_color: starting color
+    :param end_color: ending color
+    :param fraction: Floating point number  ranging from 0 to 1 indicating what
+    fraction of interpolation between start_color and end_color.
+    """
+
+    start_color = _color_to_tuple(start_color)
+    end_color = _color_to_tuple(end_color)
+    if fraction >= 1:
+        return end_color
+    if fraction <= 0:
+        return start_color
+
+    faded_color = [0, 0, 0]
+    for i in range(3):
+        faded_color[i] = start_color[i] - int(
+            (start_color[i] - end_color[i]) * fraction
+        )
+    return _tuple_to_color(faded_color)
