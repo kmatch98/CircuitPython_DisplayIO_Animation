@@ -111,7 +111,9 @@ class Animation(list):
         """
         for entry in self:
 
-            if (frame == entry.frame_start) and (entry.group is not None):  # initialize startx, starty
+            if (frame == entry.frame_start) and (
+                entry.group is not None
+            ):  # initialize startx, starty
                 entry.startx = entry.group.x
                 entry.starty = entry.group.y
 
@@ -121,9 +123,7 @@ class Animation(list):
                 # calculate a value between 0.0 and 1.0 to show the current frame's
                 # position within this entry's frame range
 
-                if (
-                    entry.frame_end - entry.frame_start
-                ) <= 0:  # prevent divide by zero
+                if (entry.frame_end - entry.frame_start) <= 0:  # prevent divide by zero
                     position = 1.0
                 else:
                     position = (frame - entry.frame_start) / (
@@ -255,6 +255,7 @@ def translate(
     group.x = round((x2 - x1) * easing_function_x(position)) + x1
     group.y = round((y2 - y1) * easing_function_y(position)) + y1
 
+
 def translate_relative(
     *,
     delta_x,
@@ -319,7 +320,7 @@ def wiggle(
     frame_start,
     frame,
     **kwargs
-    ):
+):
     """Performs a nervous wiggling animation around the starting point. To achieve a random-looking
     wiggle, set ``xsteps`` and ``ysteps`` to two different prime numbers.
 
@@ -370,14 +371,15 @@ def wiggle(
             delta_y / ysteps * ypositions[int((frame - frame_start) % len(ypositions))]
         )
 
+
 def color_morph_vector_shape(
-                *,
-                color_start,
-                color_end,
-                vector_shape,
-                position,
-                **kwargs,
-                ):
+    *,
+    color_start,
+    color_end,
+    vector_shape,
+    position,
+    **kwargs,
+):
     """Performs color morphing for a vector shape, with color between the ``color_start`` and ``color_end``
     values based on the position parameter.
 
@@ -391,20 +393,21 @@ def color_morph_vector_shape(
     """
     morphed_color = _color_fade(color_start, color_end, position)
 
-    palette=Palette(2)
-    palette[1]=morphed_color
+    palette = Palette(2)
+    palette[1] = morphed_color
     palette.make_transparent(0)
 
-    vector_shape.pixel_shader=palette
+    vector_shape.pixel_shader = palette
+
 
 def color_morph_label(
-                *,
-                color_start,
-                color_end,
-                label,
-                position,
-                **kwargs,
-                ):
+    *,
+    color_start,
+    color_end,
+    label,
+    position,
+    **kwargs,
+):
     """Performs color morphing for a text label between the ``color_start`` and ``color_end``
     values based on the position parameter.
 
@@ -418,14 +421,15 @@ def color_morph_label(
     morphed_color = _color_fade(color_start, color_end, position)
     label.color = morphed_color
 
+
 def color_morph_palette(
-                *,
-                palette_start,
-                color_end,
-                palette_target,
-                position,
-                **kwargs,
-                ):
+    *,
+    palette_start,
+    color_end,
+    palette_target,
+    position,
+    **kwargs,
+):
     """Performs color morphing for a color palette between the ``palette_start`` and a single
     ``color_end`` value based on the position parameter.  At the final position=1.0, the
     ``palette_target`` will be filled with the ``color_end`` value.
@@ -459,9 +463,11 @@ def _color_to_tuple(value):
 
     raise ValueError("Color must be a tuple or 24-bit integer value.")
 
+
 def _tuple_to_color(rgb_tuple):
     rgb_int = rgb_tuple[0] << 16 | rgb_tuple[1] << 8 | rgb_tuple[2]
     return rgb_int
+
 
 def _color_fade(start_color, end_color, fraction):
     """Linear extrapolation of a color between two RGB colors (tuple or 24-bit integer).
