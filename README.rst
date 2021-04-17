@@ -40,25 +40,25 @@ There are three steps required to get your Animation going:
 
 1. **Create the graphical elements** and put them into groups, organize the groups depending upon which elements will be move together or separately.
 
-2. **Instance an :python:`Animation()` object** and create the animation entries using :python:`add_entry()` with all the desired parameters, including the starting and ending frames, the function for animating your object and all the relevant parameters for that function.
+2. **Instance an `Animation()` object** and create the animation entries using `add_entry()` with all the desired parameters, including the starting and ending frames, the function for animating your object and all the relevant parameters for that function.
 
    * Several initial animation functions are provided:
 
-     - :python:`translate` - Move the group between two (x1,y1) and (x2,y2) locations with options
+     - `translate` - Move the group between two (x1,y1) and (x2,y2) locations with options
        for "easing" functions to make cool animations
-     - :python:`translate_relative` - Move from the initial position by (delta_x, delta_y), also
+     - `translate_relative` - Move from the initial position by (delta_x, delta_y), also
        with options for easing functions
-     - :python:`wiggle` - make some nervous jittery motion while generally staying in one spot
-     - :python:`color_morph_vector_shape` - morph between a starting and ending color for a vector shape
-     - :python:`color_morph_label` - morph between a starting and ending color for a text label
-     - :python:`color_morph_palette` - morph between a starting palette of colors all to a single ending color (usually used for a bitmap)
+     - `wiggle` - make some nervous jittery motion while generally staying in one spot
+     - `color_morph_vector_shape` - morph between a starting and ending color for a vector shape
+     - `color_morph_label` - morph between a starting and ending color for a text label
+     - `color_morph_palette` - morph between a starting palette of colors all to a single ending color (usually used for a bitmap)
 
    * Add your own functions, maybe morphing colors, rotation or changing the shape altogether
      as it moves.
 
    * You can combine animations over the same frames, try it out and see what you can discover!
 
-3. **Make a `while` loop** that calls :python:`execute_frame()` for each frame.
+3. **Make a `while` loop** that calls `execute_frame()` for each frame.
 
 4. **Enjoy** watching your animation.
 
