@@ -27,7 +27,7 @@ Here is the animation from the example:
 
 .. image:: https://user-images.githubusercontent.com/33587466/114058917-7c4f1180-9859-11eb-9ae9-7a474636fa90.gif
      :alt: Graphic showing the animated simpletest example in action.
-     
+
 Here is a longer form animation that includes the color morphing:
 
 .. image:: https://user-images.githubusercontent.com/33587466/115117526-a3e26000-9f64-11eb-9240-de59f80ae990.gif
